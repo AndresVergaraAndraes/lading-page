@@ -8,16 +8,7 @@
     <title>Musica</title>
   </head>
   <body>
-    <header class="index-header">
-      <a class="post-logo" href="./index.html">
-        <img class="logo" src="./css//assets/escalab.jpg" alt="logo escalab" />
-      </a>
-      <nav class="post-nav">
-        <a class="index-nav" href="./index.html">Home</a>
-        <a class="index-nav" href="./blogs.html">Blogs</a>
-      </nav>
-    </header>
-    <main class="post">
+    <main class="post"  id="index-main">
       <section class="post-information">
         <h1 class="music-title">Música</h1>
         <img
@@ -34,20 +25,23 @@
           todos los rincones del mundo.
         </p>
       </section>
+      <span class="post-border"></span>
       <aside class="post-aside">
         <div class="information">
           <h2>Información</h2>
-          <ul>
+          <ul class="post-links">
             <li>Autor: Andrés</li>
             <li class="posted">Posteado: 5 de mayo 2023</li>
           </ul>
         </div>
         <div class="other-blogs">
           <h2>Otros posts</h2>
-          <a href="./musica.html">Música</a>
-          <a href="./juegos.html">Juegos</a>
-          <a href="./estudios.html">Estudios</a>
-          <a href="./computador.html">PC que quiero</a>
+          <div class="post-links">
+            <a href="./musica.html">Música</a>
+            <a href="./juegos.html">Juegos</a>
+            <a href="./estudios.html">Estudios</a>
+            <a href="./computador.html">PC que quiero</a>
+          </div>
         </div>
       </aside>
     </main>
@@ -65,5 +59,6 @@
         </a>
       </div>
     </footer>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>

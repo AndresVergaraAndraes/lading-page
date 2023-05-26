@@ -1,20 +1,31 @@
 :root{
   --title-color:#4e73df;
+  --box-shadow: 0px 0px 10px 1px rgba(187, 184, 190, 0.2);
 }
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+  background-color: #0c1f49;
+  color: whitesmoke;
+height: 100vh;
+background: rgb(1,4,34);
+background: linear-gradient(0deg, rgb(2, 6, 56) 25%, rgb(30, 53, 109) 49%, rgba(0,27,47,1) 100%);
 }
 
 .background {
   position: absolute;
   object-fit: cover;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: url("https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/02/lenguaje-programacion-1859691.jpg?tf=3840x");
   background-size: cover;
-  clip-path: polygon(73% 0, 100% 0, 100% 100%, 57% 100%);
+  clip-path: polygon(66% 0, 100% 0, 100% 100%, 39% 100%);
+  opacity: .3;
+  z-index: -1;
 }
 .index-header {
   display: flex;
@@ -27,6 +38,8 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
+  margin-right: .5rem;
+  box-shadow: var(--box-shadow);
 }
 .index-header nav {
   display: flex;
@@ -35,10 +48,12 @@
 .index-nav,
 .blogs-nav {
   text-decoration: none;
-  font-weight: 800;
-  color: rgb(92, 90, 90);
+  color: rgb(222, 222, 222);
   margin: 1rem;
   transition: ease-in-out 0.3s;
+}
+nav a{
+  font-weight: 600;
 }
 .index-header nav a:hover {
   color: var(--title-color);
@@ -54,16 +69,38 @@
 .info-container {
   margin-left: 2rem;
   height: auto;
+  background-color: #0f0f20;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 40%;
+
+}
+.info-container h1{
+  display: block;
+  white-space: nowrap;
+  border-right: 2px solid;
+  width: 16ch;
+  animation: typing 2s steps(12), blink .5s infinite step-end alternate;
+  overflow:hidden;
+  letter-spacing: .2rem;
+}
+@keyFrames typing {
+from { width: 0}
+}
+@keyFrames blink {
+ 50% { border-color: transparent}
 }
 .description {
   margin-top: 0.5rem;
 }
 .info-container h2 {
   color:  var(--title-color);
+  font-style: italic;
+  letter-spacing: .1rem;
 }
 .info-container p {
-  width: 40%;
-  margin-bottom: 1rem;
+
+  margin-bottom: 1.5rem;
 }
 .info-container a {
   text-decoration: none;
@@ -81,7 +118,7 @@
 }
 .index-footer {
   height: 10vh;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
 .index-footer h3 {
   margin-bottom: 0.5rem;
@@ -93,7 +130,6 @@
 }
 .social-media {
   width: 2.5rem;
-  height: 2.5rem;
   margin-right: 0.5rem;
   filter: grayscale(100%);
 }
@@ -106,7 +142,7 @@
 }
 .blogs-main {
   width: 100%;
-  height: 79vh;
+  height: 75vh;
 }
 .post-card {
   display: flex;
@@ -116,7 +152,8 @@
 .card {
   display: flex;
   height: auto;
-  box-shadow: 0 5px 5px rgba(31, 28, 34, 0.2);
+  box-shadow: 2px 2px 4px 1px rgba(187, 184, 190, 0.2);
+  background-color: #01050c50;
   margin: 1rem;
   padding: 0.5rem 0 0.5rem 0;
   align-items: center;
@@ -135,7 +172,7 @@
   border-radius: 20px;
 }
 .card p {
-  width: 95%;
+  width: 100%;
   padding: 0.2rem;
   margin-bottom: 0.5rem;
 }
@@ -144,7 +181,7 @@
   background-color:var(--title-color);
   color: whitesmoke;
   text-decoration: none;
-  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 1rem;
   cursor: pointer;
   transition: ease-out 0.5s;
@@ -154,23 +191,34 @@
 /* Post */
 .post {
   display: flex;
+  padding: .5rem 0 0 2rem;
+  height: 90vh;
 
-  padding: 2rem;
-  height: auto;
-}
-#aoe2 {
-  margin-bottom: 1rem;
 }
 .post-information {
   width: 90%;
   height: auto;
   padding: 1rem;
 }
-.music-title {
+.music-title,.pc-title,.games-title,.studies-title,.other-blogs h2,.information h2 {
   margin-bottom: 1rem;
-  width: 4rem;
   border-bottom: 2px solid  var(--title-color);
+  line-height: 2.5rem;
+}
+.music-title{
   width: 9%;
+}
+.games-title{
+  width: 19%;
+}
+.studies-title{
+  width: 28%;
+}
+.pc-title{
+  width: 25%;
+}
+.other-blogs h2,.information h2{
+  width: 90%;
 }
 .post-image {
   width: 90%;
@@ -178,18 +226,22 @@
   object-fit: cover;
 }
 .post-information p {
-  padding: 1rem;
+  padding: .5rem;
   width: 90%;
 }
-
 .post-aside {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   line-height: 2rem;
-  border-left: 1.5px solid black;
-  padding-left: 3rem;
+  margin-right: 2rem;
+}
+.post-border{
+  border-left: 1.5px solid rgb(194, 194, 194);
+  padding-left: 2rem;
+  margin-top: 3.8rem;
+  height: 80%;
 }
 
 .information ul li {
@@ -212,22 +264,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: -1px 5px 12px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px -1px rgba(215, 230, 249, 0.879);
   height: 10vh;
   border-radius: 15px 15px 0 0;
+  opacity: .8;
+  background-color: rgb(0, 3, 45);
 }
 
 @media (max-width: 912px) {
+  body{
+    height: auto;
+  }
+  .background{
+    
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0 51%);
+  }
+  .index-main{
+    height: 80vh;
+  }
+
+  .info-container{
+    width: 86%;
+    opacity: .8;
+    padding-bottom: 2.5rem;
+    border-radius: 20px;
+  }
   .info-container h1 {
     font-size: 3.2rem;
     width: 60%;
+    width: 14ch;
   }
   .info-container h2 {
     font-size: 2.5rem;
   }
   .info-container p {
     font-size: 1.5rem;
-    width: 60%;
     margin-bottom: 2rem;
   }
   .info-container a {
@@ -247,9 +318,13 @@
     flex-direction: column;
     justify-content: center;
   }
+  .blogs-main h1{
+    padding-bottom: 2rem;
+  }
   .post-card {
     flex-direction: column;
     align-items: center;
+    padding-bottom: 2rem;
   }
   .card {
     width: 80%;
@@ -276,11 +351,17 @@
   .post-button {
     width: 11rem;
     font-size: 1.2rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-right: 1rem;
   }
   .blogs-footer {
     height: 10vh;
   }
   /* Post */
+
+  .post-border{
+    display: none;
+  }
   .logo {
     width: 4rem;
     height: 4rem;
@@ -288,9 +369,24 @@
   nav a {
     font-size: 1.6rem;
   }
+  .post{
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+  }
+  .games-title {
+    width: 32%;
+}
+  .music-title {
+    width: 20%;
+  }
+  .studies-title{
+    width: 40%;
+  }
   .post-image {
     width: 100%;
     height: 60%;
+    margin-top: 1rem;
   }
   .post-information p {
     margin-top: 1rem;
@@ -298,42 +394,73 @@
     padding-left: 1rem;
     font-size: 1.7rem;
   }
-
   .post-aside {
-    padding-left: 2rem;
-    margin-left: 1rem;
-  }
+    padding-left: 0rem;
+    margin-left: 0rem;
 
+    margin-right: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 3rem 0 2rem 0;
+  }
+  .information,.other-blogs{
+    width: 100%;
+  }
+  .information, .other-blogs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  .post-links{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .post-links a,.information ul li{
+    margin-right: 1rem;
+  }
   .information h2,
   .other-blogs h2,
   .music-title {
     font-size: 2.2rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid rgb(25, 25, 134);
+    line-height: 3.2rem;
   }
-  .music-title {
-    width: 20%;
+  .information h2{
+    width: 15rem;
   }
-
-  .information ul li {
+.other-blogs h2{
+  width: 14rem;
+}
+  .information ul li, .post-links a {
     list-style: none;
     line-height: 2.5rem;
     font-size: 1.5rem;
   }
   .other-blogs {
-    width: 100%;
-    margin-top: 2rem;
+
+    margin-top: 0rem;
   }
-  .information ul li,
-  .other-blogs ul li a {
-    color: rgb(72, 69, 225);
-  }
+ 
   .social-media {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4.2rem;
+    margin: 0 1rem 0 1rem;
   }
+
+}
+@media (max-width: 768px) {
+.post{
+  height: auto;
+}
+.studies-title {
+  width: 45%;
+}
 }
 @media (max-width: 650px) {
+  body{
+    height: auto;
+  }
   .blogs-main {
     justify-content: space-around;
     height: auto;
@@ -341,14 +468,14 @@
 
   .card {
     flex-direction: column;
-    height: 18rem;
+    height: 17rem;
     border-radius: 10px;
     width: 70%;
 
     padding: 0;
   }
   .card-content {
-    height: 7rem;
+    height: 5rem;
     width: 100%;
   }
   .card p {
@@ -364,63 +491,12 @@
     width: 7rem;
     font-size: 0.9rem;
     text-align: center;
+    margin: 0;
   }
 }
-@media (max-width: 842px) {
-  .post {
-    flex-direction: column;
 
-    height: auto;
-  }
-  .post-information {
-    width: 100%;
-  }
-  .post-aside {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    padding: 1rem;
-    border-left: none;
-
-    height: auto;
-  }
-
-  .information h2 {
-    width: 12.5rem;
-  }
-  .posted {
-    margin-left: 0.3rem;
-  }
-  .other-blogs {
-    height: 10.1rem;
-    width: 80%;
-    margin-left: 2rem;
-  }
-  .other-blogs h2 {
-    width: 11.5rem;
-  }
-
-  .other-blogs a {
-    text-decoration: none;
-    line-height: 2.5rem;
-    font-size: 1.5rem;
-    color: rgb(72, 69, 225);
-    margin-left: 1rem;
-  }
-
-  .information ul,
-  .other-blogs ul {
-    display: flex;
-    align-items: center;
-  }
-  .post-studies,
-  .post-games {
-    margin-bottom: 1.7rem;
-  }
-}
 @media (max-width: 534px) {
+
   .index-header {
     padding: 1rem 0 0 0.5rem;
   }
@@ -429,25 +505,30 @@
     padding-top: 1rem;
     width: 100%;
   }
+  .post-information{
+    padding: 0;
+  }
   .post-aside {
-    margin: 0;
-    padding: 0 2rem 0 2rem;
+
     align-items: center;
   }
   .music-title {
-    width: 35%;
+    width: 45%;
+    font-size: 1.5rem;
+  }
+  .post-links{
+    justify-content: baseline;
   }
   .post-information p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    text-align:left;
+    width: 100%;
   }
   .information h2,
   .other-blogs h2 {
     font-size: 1.5rem;
   }
-  .information {
-    height: 178px;
-    margin-right: 1rem;
-  }
+ 
   .information h2 {
     width: 9rem;
     margin-bottom: 0;
@@ -459,13 +540,9 @@
   .other-blogs a {
     line-height: 1.7rem;
   }
-  .other-blogs {
-    margin-bottom: 1rem;
-    margin-left: 0;
-    margin-top: 0;
-  }
+ 
   .other-blogs h2 {
-    width: 8rem;
+  text-align: center;
   }
 
   .social-media {
@@ -474,8 +551,8 @@
     height: 2.5rem;
   }
   /*games*/
-  #aoe2 {
-    width: 80%;
+  .games-title{
+    width: 60%;
   }
   .blogs-main {
     height: auto;
@@ -484,6 +561,7 @@
     clip-path: polygon(61% 0, 100% 0%, 100% 100%, 34% 100%);
     z-index: -1;
     height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   nav a {
     font-size: 1.1rem;
@@ -494,7 +572,7 @@
   }
   .info-container {
     opacity: 0.86;
-    background-color: #0c1f49;
+   
     text-align: center;
     padding: 1.5rem;
     margin: 0;
@@ -533,18 +611,36 @@
     align-items: center;
     justify-content: center;
     margin-left: 0;
-    background-color: rgb(62, 63, 66);
+    background-color: #0f0f20;
+    border-top: 1px solid rgba(56, 97, 145, 0.795);
   }
 
   .index-footer h3 {
     display: none;
   }
-  .post-aside {
-    height: auto;
-  }
+
 }
-@media (max-width: 283px) {
-  .second-color {
-    color: whitesmoke;
+@media (max-width: 360px){
+  .music-title,.pc-title,.games-title,.studies-title,.other-blogs h2,.information h2 {
+    margin-top: .5rem;
+    border-bottom: 2px solid  var(--title-color);
+    line-height: 2rem;
+    font-size: 1.3rem;
   }
-}
+  .games-title{
+    width: 70%;
+  }
+  .post-aside{
+    flex-direction: row;
+  }
+  .post-links{
+    flex-direction: column;
+  }
+  .information,.other-blogs{
+    padding: 1.5rem;
+  }
+  .other-blogs h2{
+    width: auto;
+  }
+} 
+
