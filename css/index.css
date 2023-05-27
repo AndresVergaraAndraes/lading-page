@@ -678,7 +678,7 @@ nav a {
     display: none;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 377px) {
   .music-title,
   .pc-title,
   .games-title,
