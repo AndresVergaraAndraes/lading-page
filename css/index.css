@@ -44,6 +44,9 @@ body {
   height: 2.5rem;
   border-radius: 50%;
   margin-right: 0.5rem;
+  transition: 0.6s ease-out;
+}
+.logo:hover {
   box-shadow: var(--box-shadow);
 }
 .index-header nav {
@@ -78,6 +81,10 @@ nav a {
   padding: 1.5rem;
   border-radius: 10px;
   width: 40%;
+  transition: 0.6s ease-in-out;
+}
+.info-container:hover {
+  box-shadow: 0px 0px 15px 5px rgba(126, 150, 248, 0.183);
 }
 .info-container h1 {
   display: block;
@@ -116,13 +123,20 @@ nav a {
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   border-radius: 1rem;
   cursor: pointer;
-  transition: ease-out 0.5s;
+  transition: ease-in-out 0.5s;
   font-size: 1rem;
   font-weight: 700;
 }
+
 .info-container a:hover {
-  background-color: #688cf8;
+  background-color: #6086f6;
 }
+
+.info-container a:active{
+ font-size: .9rem;
+  
+}
+
 .index-footer {
   height: 10vh;
   margin-left: 1.5rem;
@@ -159,13 +173,16 @@ nav a {
 .card {
   display: flex;
   height: auto;
-  box-shadow: 2px 2px 4px 1px rgba(187, 184, 190, 0.2);
   background-color: #01050c50;
   margin: 1rem;
   padding: 0.5rem 0 0.5rem 0;
   align-items: center;
   border-radius: 20px;
   width: 40%;
+  transition: 0.6s ease-in-out;
+}
+.card:hover {
+  box-shadow: 0px 0px 10px 3px rgba(126, 150, 248, 0.183);
 }
 .card-content {
   padding: 0.5rem;
@@ -195,6 +212,9 @@ nav a {
   font-size: 0.8rem;
   font-weight: 700;
 }
+.post-button:active {
+  transform: scale(0.95);
+}
 /* Post */
 .post {
   display: flex;
@@ -218,20 +238,21 @@ nav a {
   font-size: 2rem;
 }
 .music-title {
-  width: 9%;
+  width: 13%;
 }
 .games-title {
-  width: 19%;
+  width: 16rem;
 }
 .studies-title {
-  width: 28%;
+  width: 23rem;
 }
 .pc-title {
-  width: 25%;
+  width: 13rem;
 }
 .other-blogs h2,
 .information h2 {
   width: 90%;
+  font-size: 1.5rem;
 }
 .post-image {
   width: 90%;
@@ -259,7 +280,7 @@ nav a {
 
 .information ul li {
   list-style: none;
-  color: var(--title-color);
+  color: whitesmoke;
 }
 .other-blogs {
   width: 100%;
@@ -267,9 +288,13 @@ nav a {
 }
 .other-blogs a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
+  color: whitesmoke;
+  font-weight: 700;
+  transition: ease-in-out 0.7s;
+}
+.other-blogs a:hover {
   color: var(--title-color);
 }
 .post-footer {
@@ -471,7 +496,7 @@ nav a {
     height: auto;
   }
   .studies-title {
-    width: 45%;
+    width: 23rem;
   }
 }
 @media (max-width: 650px) {
@@ -666,7 +691,7 @@ nav a {
     font-size: 1.3rem;
   }
   .games-title {
-    width: 70%;
+    width: 55%;
   }
   .post-aside {
     flex-direction: row;
